@@ -264,7 +264,7 @@ define([
           return function (value) {
             // 删除 所有样式
             if(window.jQuery){
-              jQuery('.note-editable').find('div,h1,h2,h3,h4,h5,h6,p,span,ul,ol,li,a,strong,b,u').removeAttr('style').removeAttr('class').removeAttr('id');
+              jQuery('.note-editable').find('div,h1,h2,h3,h4,h5,h6,p,span,ul,ol,li,a,strong,b,u,button,form,header,footer,nav,content').removeAttr('style').removeAttr('class').removeAttr('id');
             }
 
           };
