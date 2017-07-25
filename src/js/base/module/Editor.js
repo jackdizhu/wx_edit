@@ -258,11 +258,23 @@ define([
 
     for (var idx = 0, len = commands.length; idx < len; idx ++) {
       this[commands[idx]] = (function (sCmd) {
-        return function (value) {
-          beforeCommand();
-          document.execCommand(sCmd, false, value);
-          afterCommand(true);
-        };
+        if(sCmd == 'removeFormat'){
+
+          // removeFormatAll
+          return function (value) {
+            // 删除 所有样式
+            if(window.jQuery){
+              jQuery('.note-editable').find('div,h1,h2,h3,h4,h5,h6,p,span,ul,ol,li,a,strong,b,u').removeAttr('style').removeAttr('class').removeAttr('id');
+            }
+
+          };
+        }else{
+          return function (value) {
+            beforeCommand();
+            document.execCommand(sCmd, false, value);
+            afterCommand(true);
+          };
+        }
       })(commands[idx]);
       context.memo('help.' + commands[idx], lang.help[commands[idx]]);
     }
@@ -459,6 +471,7 @@ define([
     });
 
     this.onFormatBlock = function (tagName) {
+      console.log(tagName);
       // [workaround] for MSIE, IE need `<`
       tagName = agent.isMSIE ? '<' + tagName + '>' : tagName;
       document.execCommand('FormatBlock', false, tagName);

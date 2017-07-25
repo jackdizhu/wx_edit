@@ -20,5 +20,8 @@ https://jackdizhu.github.io/wx_edit/
 
     // 修改 增加 图片单行显示
     src/js/base/module/Editor.js 修改
+    // removeFormatAll 修改清除样式方法
+    src/js/base/module/Editor.js 修改
+
 
 all 分支 原始版本
