@@ -16,4 +16,6 @@ Home page: <http://summernote.org>
 
 summernote 修改版 (主分支)
 
+https://jackdizhu.github.io/wx_edit/
+
 all 分支 原始版本
