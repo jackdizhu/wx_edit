@@ -18,4 +18,7 @@ summernote 修改版 (主分支)
 
 https://jackdizhu.github.io/wx_edit/
 
+    // 修改 增加 图片单行显示
+    src/js/base/module/Editor.js 修改
+
 all 分支 原始版本

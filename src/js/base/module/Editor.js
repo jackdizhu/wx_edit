@@ -352,8 +352,10 @@ define([
           }
           $image.css('width', Math.min($editable.width(), $image.width()));
         }
-
-        $image.show();
+        // 修改 增加 图片单行显示
+        $image.show().css({
+          'display': 'block'
+        });
         range.create(editable).insertNode($image[0]);
         range.createFromNodeAfter($image[0]).select();
         afterCommand();
