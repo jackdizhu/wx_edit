@@ -14,4 +14,6 @@ Summernote is a JavaScript library that helps you create WYSIWYG editors online.
 
 Home page: <http://summernote.org>
 
-summernote 修改版
+summernote 修改版 (主分支)
+
+all 分支 原始版本
