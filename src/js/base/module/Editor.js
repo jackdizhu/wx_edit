@@ -265,6 +265,10 @@ define([
             // 删除 所有样式
             if(window.jQuery){
               jQuery('.note-editable').find('div,h1,h2,h3,h4,h5,h6,p,span,ul,ol,li,a,strong,b,u,button,form,header,footer,nav,content').removeAttr('style').removeAttr('class').removeAttr('id');
+              jQuery('.note-editable').find('img').removeAttr('class').removeAttr('id').css({
+                'width': '100%',
+                'height': 'auto'
+              });
             }
 
           };
@@ -366,7 +370,9 @@ define([
         }
         // 修改 增加 图片单行显示
         $image.show().css({
-          'display': 'block'
+          'width': '100%',
+          'height': 'auto'
+          // 'display': 'block'
         });
         range.create(editable).insertNode($image[0]);
         range.createFromNodeAfter($image[0]).select();
