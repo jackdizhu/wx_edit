@@ -24,7 +24,6 @@ define([
       options.langInfo = $.extend(true, {}, $.summernote.lang['en-US'], $.summernote.lang[options.lang]);
       options.icons = $.extend(true, {}, $.summernote.options.icons, options.icons);
       options.tooltip = options.tooltip === 'auto' ? !agent.isSupportTouch : options.tooltip;
-
       this.each(function (idx, note) {
         var $note = $(note);
         if (!$note.data('summernote')) {

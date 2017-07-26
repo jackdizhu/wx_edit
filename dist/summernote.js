@@ -6,7 +6,7 @@
  * Copyright 2013- Alan Hong. and other contributors
  * summernote may be freely distributed under the MIT license./
  *
- * Date: 2017-07-26T03:19Z
+ * Date: 2017-07-26T03:54Z
  */
 (function (factory) {
   /* global define */
@@ -1811,7 +1811,6 @@
       options.langInfo = $.extend(true, {}, $.summernote.lang['en-US'], $.summernote.lang[options.lang]);
       options.icons = $.extend(true, {}, $.summernote.options.icons, options.icons);
       options.tooltip = options.tooltip === 'auto' ? !agent.isSupportTouch : options.tooltip;
-
       this.each(function (idx, note) {
         var $note = $(note);
         if (!$note.data('summernote')) {
@@ -2102,156 +2101,143 @@
   $.summernote = $.summernote || {
     lang: {}
   };
-
   $.extend($.summernote.lang, {
-    'en-US': {
+    'zh-CN': {
       font: {
-        bold: 'Bold',
-        italic: 'Italic',
-        underline: 'Underline',
-        clear: 'Remove Font Style',
-        height: 'Line Height',
-        name: 'Font Family',
-        strikethrough: 'Strikethrough',
-        subscript: 'Subscript',
-        superscript: 'Superscript',
-        size: 'Font Size'
+        bold: '粗体',
+        italic: '斜体',
+        underline: '下划线',
+        clear: '清除格式',
+        height: '行高',
+        name: '字体',
+        strikethrough: '删除线',
+        subscript: '下标',
+        superscript: '上标',
+        size: '字号'
       },
       image: {
-        image: 'Picture',
-        insert: 'Insert Image',
-        resizeFull: 'Resize Full',
-        resizeHalf: 'Resize Half',
-        resizeQuarter: 'Resize Quarter',
-        floatLeft: 'Float Left',
-        floatRight: 'Float Right',
-        floatNone: 'Float None',
-        shapeRounded: 'Shape: Rounded',
-        shapeCircle: 'Shape: Circle',
-        shapeThumbnail: 'Shape: Thumbnail',
-        shapeNone: 'Shape: None',
-        dragImageHere: 'Drag image or text here',
-        dropImage: 'Drop image or Text',
-        selectFromFiles: 'Select from files',
-        maximumFileSize: 'Maximum file size',
-        maximumFileSizeError: 'Maximum file size exceeded.',
-        url: 'Image URL',
-        remove: 'Remove Image'
+        image: '图片',
+        insert: '插入图片',
+        resizeFull: '缩放至 100%',
+        resizeHalf: '缩放至 50%',
+        resizeQuarter: '缩放至 25%',
+        floatLeft: '靠左浮动',
+        floatRight: '靠右浮动',
+        floatNone: '取消浮动',
+        shapeRounded: '形状: 圆角',
+        shapeCircle: '形状: 圆',
+        shapeThumbnail: '形状: 缩略图',
+        shapeNone: '形状: 无',
+        dragImageHere: '将图片拖拽至此处',
+        selectFromFiles: '从本地上传',
+        maximumFileSize: '文件大小最大值',
+        maximumFileSizeError: '文件大小超出最大值。',
+        url: '图片地址',
+        remove: '移除图片'
       },
       video: {
-        video: 'Video',
-        videoLink: 'Video Link',
-        insert: 'Insert Video',
-        url: 'Video URL?',
-        providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion or Youku)'
+        video: '视频',
+        videoLink: '视频链接',
+        insert: '插入视频',
+        url: '视频地址',
+        providers: '(优酷, 腾讯, Instagram, DailyMotion, Youtube等)'
       },
       link: {
-        link: 'Link',
-        insert: 'Insert Link',
-        unlink: 'Unlink',
-        edit: 'Edit',
-        textToDisplay: 'Text to display',
-        url: 'To what URL should this link go?',
-        openInNewWindow: 'Open in new window'
+        link: '链接',
+        insert: '插入链接',
+        unlink: '去除链接',
+        edit: '编辑链接',
+        textToDisplay: '显示文本',
+        url: '链接地址',
+        openInNewWindow: '在新窗口打开'
       },
       table: {
-        table: 'Table',
-        addRowAbove: 'Add row above',
-        addRowBelow: 'Add row below',
-        addColLeft: 'Add column left',
-        addColRight: 'Add column right',
-        delRow: 'Delete row',
-        delCol: 'Delete column',
-        delTable: 'Delete table'
+        table: '表格'
       },
       hr: {
-        insert: 'Insert Horizontal Rule'
+        insert: '水平线'
       },
       style: {
-        style: 'Style',
-        p: 'Normal',
-        blockquote: 'Quote',
-        pre: 'Code',
-        h1: 'Header 1',
-        h2: 'Header 2',
-        h3: 'Header 3',
-        h4: 'Header 4',
-        h5: 'Header 5',
-        h6: 'Header 6'
+        style: '样式',
+        p: '普通',
+        blockquote: '引用',
+        pre: '代码',
+        h1: '标题 1',
+        h2: '标题 2',
+        h3: '标题 3',
+        h4: '标题 4',
+        h5: '标题 5',
+        h6: '标题 6'
       },
       lists: {
-        unordered: 'Unordered list',
-        ordered: 'Ordered list'
+        unordered: '无序列表',
+        ordered: '有序列表'
       },
       options: {
-        help: 'Help',
-        fullscreen: 'Full Screen',
-        codeview: 'Code View'
+        help: '帮助',
+        fullscreen: '全屏',
+        codeview: '源代码'
       },
       paragraph: {
-        paragraph: 'Paragraph',
-        outdent: 'Outdent',
-        indent: 'Indent',
-        left: 'Align left',
-        center: 'Align center',
-        right: 'Align right',
-        justify: 'Justify full'
+        paragraph: '段落',
+        outdent: '减少缩进',
+        indent: '增加缩进',
+        left: '左对齐',
+        center: '居中对齐',
+        right: '右对齐',
+        justify: '两端对齐'
       },
       color: {
-        recent: 'Recent Color',
-        more: 'More Color',
-        background: 'Background Color',
-        foreground: 'Foreground Color',
-        transparent: 'Transparent',
-        setTransparent: 'Set transparent',
-        reset: 'Reset',
-        resetToDefault: 'Reset to default'
+        recent: '最近使用',
+        more: '更多',
+        background: '背景',
+        foreground: '前景',
+        transparent: '透明',
+        setTransparent: '透明',
+        reset: '重置',
+        resetToDefault: '默认'
       },
       shortcut: {
-        shortcuts: 'Keyboard shortcuts',
-        close: 'Close',
-        textFormatting: 'Text formatting',
-        action: 'Action',
-        paragraphFormatting: 'Paragraph formatting',
-        documentStyle: 'Document Style',
-        extraKeys: 'Extra keys'
-      },
-      help: {
-        'insertParagraph': 'Insert Paragraph',
-        'undo': 'Undoes the last command',
-        'redo': 'Redoes the last command',
-        'tab': 'Tab',
-        'untab': 'Untab',
-        'bold': 'Set a bold style',
-        'italic': 'Set a italic style',
-        'underline': 'Set a underline style',
-        'strikethrough': 'Set a strikethrough style',
-        'removeFormat': 'Clean a style',
-        'justifyLeft': 'Set left align',
-        'justifyCenter': 'Set center align',
-        'justifyRight': 'Set right align',
-        'justifyFull': 'Set full align',
-        'insertUnorderedList': 'Toggle unordered list',
-        'insertOrderedList': 'Toggle ordered list',
-        'outdent': 'Outdent on current paragraph',
-        'indent': 'Indent on current paragraph',
-        'formatPara': 'Change current block\'s format as a paragraph(P tag)',
-        'formatH1': 'Change current block\'s format as H1',
-        'formatH2': 'Change current block\'s format as H2',
-        'formatH3': 'Change current block\'s format as H3',
-        'formatH4': 'Change current block\'s format as H4',
-        'formatH5': 'Change current block\'s format as H5',
-        'formatH6': 'Change current block\'s format as H6',
-        'insertHorizontalRule': 'Insert horizontal rule',
-        'linkDialog.show': 'Show Link Dialog'
+        shortcuts: '快捷键',
+        close: '关闭',
+        textFormatting: '文本格式',
+        action: '动作',
+        paragraphFormatting: '段落格式',
+        documentStyle: '文档样式',
+        extraKeys: '额外按键'
       },
       history: {
-        undo: 'Undo',
-        redo: 'Redo'
+        undo: '撤销',
+        redo: '重做'
       },
-      specialChar: {
-        specialChar: 'SPECIAL CHARACTERS',
-        select: 'Select Special characters'
+      help: {
+        'insertParagraph': '插入段落',
+        'undo': '撤销',
+        'redo': '重做',
+        'tab': '增加缩进',
+        'untab': '减少缩进',
+        'bold': '粗体',
+        'italic': '斜体',
+        'underline': '下划线',
+        'strikethrough': '删除线',
+        'removeFormat': '清除格式',
+        'justifyLeft': '左对齐',
+        'justifyCenter': '居中对齐',
+        'justifyRight': '右对齐',
+        'justifyFull': '两端对齐',
+        'insertUnorderedList': '无序列表',
+        'insertOrderedList': '有序列表',
+        'outdent': '减少缩进',
+        'indent': '增加缩进',
+        'formatPara': '设置选中内容样式为 普通',
+        'formatH1': '设置选中内容样式为 标题1',
+        'formatH2': '设置选中内容样式为 标题2',
+        'formatH3': '设置选中内容样式为 标题3',
+        'formatH4': '设置选中内容样式为 标题4',
+        'formatH5': '设置选中内容样式为 标题5',
+        'formatH6': '设置选中内容样式为 标题6',
+        'insertHorizontalRule': '插入水平线',
+        'linkDialog.show': '显示链接对话框'
       }
     }
   });

@@ -1,7 +1,7 @@
 define([
   'summernote/bs3/ui',
   'summernote/base/core/dom',
-  'summernote/base/summernote-en-US',
+  'summernote/base/summernote-zh-CN',
   'summernote/base/module/Editor',
   'summernote/base/module/Clipboard',
   'summernote/base/module/Dropzone',
