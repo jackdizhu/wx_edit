@@ -6,7 +6,7 @@
  * Copyright 2013- Alan Hong. and other contributors
  * summernote may be freely distributed under the MIT license./
  *
- * Date: 2017-07-16T16:33Z
+ * Date: 2017-07-26T03:19Z
  */
 (function (factory) {
   /* global define */
@@ -3170,7 +3170,7 @@
         }).readAsDataURL(file);
       }).promise();
     };
-  
+
     /**
      * @method createImage
      *
@@ -4573,11 +4573,27 @@
 
     for (var idx = 0, len = commands.length; idx < len; idx ++) {
       this[commands[idx]] = (function (sCmd) {
-        return function (value) {
-          beforeCommand();
-          document.execCommand(sCmd, false, value);
-          afterCommand(true);
-        };
+        if(sCmd == 'removeFormat'){
+
+          // removeFormatAll
+          return function (value) {
+            // 删除 所有样式
+            if(window.jQuery){
+              jQuery('.note-editable').find('div,h1,h2,h3,h4,h5,h6,p,span,ul,ol,li,a,strong,b,u,button,form,header,footer,nav,content').removeAttr('style').removeAttr('class').removeAttr('id');
+              jQuery('.note-editable').find('img').removeAttr('class').removeAttr('id').css({
+                'width': '100%',
+                'height': 'auto'
+              });
+            }
+
+          };
+        }else{
+          return function (value) {
+            beforeCommand();
+            document.execCommand(sCmd, false, value);
+            afterCommand(true);
+          };
+        }
       })(commands[idx]);
       context.memo('help.' + commands[idx], lang.help[commands[idx]]);
     }
@@ -4667,8 +4683,12 @@
           }
           $image.css('width', Math.min($editable.width(), $image.width()));
         }
-
-        $image.show();
+        // 修改 增加 图片单行显示
+        $image.show().css({
+          'width': '100%',
+          'height': 'auto'
+          // 'display': 'block'
+        });
         range.create(editable).insertNode($image[0]);
         range.createFromNodeAfter($image[0]).select();
         afterCommand();
@@ -4772,6 +4792,7 @@
     });
 
     this.onFormatBlock = function (tagName) {
+      console.log(tagName);
       // [workaround] for MSIE, IE need `<`
       tagName = agent.isMSIE ? '<' + tagName + '>' : tagName;
       document.execCommand('FormatBlock', false, tagName);
@@ -7668,7 +7689,7 @@
         'linkDialog': LinkDialog,
         'linkPopover': LinkPopover,
         'imageDialog': ImageDialog,
-        'imagePopover': ImagePopover,
+        // 'imagePopover': ImagePopover,
         'tablePopover': TablePopover,
         'videoDialog': VideoDialog,
         'helpDialog': HelpDialog,
@@ -7683,12 +7704,13 @@
       toolbar: [
         ['style', ['style']],
         ['font', ['bold', 'underline', 'clear']],
-        ['fontname', ['fontname']],
-        ['color', ['color']],
+        // ['fontname', ['fontname']],
+        // ['color', ['color']],
         ['para', ['ul', 'ol', 'paragraph']],
-        ['table', ['table']],
-        ['insert', ['link', 'picture', 'video']],
-        ['view', ['fullscreen', 'codeview', 'help']]
+        // ['table', ['table']],
+        // ['insert', ['link', 'picture', 'video']],
+        ['insert', ['link', 'picture']],
+        // ['view', ['fullscreen', 'codeview', 'help']]
       ],
 
       // popover
@@ -7729,7 +7751,8 @@
       direction: null,
       tooltip: 'auto',
 
-      styleTags: ['p', 'blockquote', 'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+      // styleTags: ['p', 'blockquote', 'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+      styleTags: ['h1', 'h2'],
 
       fontNames: [
         'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New',

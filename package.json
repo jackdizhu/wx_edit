@@ -1,26 +1,69 @@
 {
-  "name": "app",
-  "version": "0.0.0",
+  "name": "summernote",
+  "description": "Super simple WYSIWYG editor",
+  "version": "0.8.6",
+  "license": "MIT",
+  "keywords": [
+    "editor",
+    "WYSIWYG"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/summernote/summernote.git"
+  },
+  "author": {
+    "name": "hackerwins",
+    "email": "<susukang98@gmail.com>"
+  },
+  "main": "dist/summernote.js",
   "scripts": {
     "dev": "node gulpFile_dev.js",
-    "env": "node gulpFile_env.js"
+    "env": "node gulpFile_env.js",
+    "min": "node gulpFile_min.js",
+    "test": "grunt test",
+    "server": "grunt server",
+    "build": "grunt build",
+    "dist": "grunt dist"
   },
   "dependencies": {
-    "babel-core": "^6.21.0",
-    "babel-loader": "^6.2.10",
-    "babel-plugin-transform-decorators": "^6.24.1",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-stage-0": "^6.16.0",
-    "css-loader": "^0.28.4",
-    "file-loader": "^0.11.2",
+    "bootstrap": "^3.3.7",
     "gulp-devhtml": "^1.2.0",
-    "html-webpack-plugin": "^2.29.0",
-    "html-withimg-loader": "^0.1.16",
-    "style-loader": "^0.18.2",
-    "url-loader": "^0.5.9",
-    "vue": "^2.3.4",
-    "vue-loader": "*",
-    "vue-template-compiler": "*",
-    "webpack": "^3.0.0"
+    "jquery": "^2.2.4"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "chai-spies": "^0.7.1",
+    "grunt": "^1.0.1",
+    "grunt-cli": "*",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-compress": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "1.1.0",
+    "grunt-contrib-uglify": "~2.2.0",
+    "grunt-contrib-watch": "*",
+    "grunt-coveralls": "^1.0.0",
+    "grunt-exec": "^2.0.0",
+    "grunt-jscs": "^3.0.1",
+    "grunt-karma": "^2.0.0",
+    "grunt-recess": "*",
+    "grunt-saucelabs": "*",
+    "grunt-webfont": "^1.0.2",
+    "karma": "1.5.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-firefox-launcher": "^1.0.1",
+    "karma-ie-launcher": "^1.0.0",
+    "karma-mocha": "^1.3.0",
+    "karma-opera-launcher": "^1.0.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-requirejs": "^1.1.0",
+    "karma-safari-launcher": "^1.0.0",
+    "karma-sauce-launcher": "^1.1.0",
+    "load-grunt-tasks": "^3.5.2",
+    "mocha": "^3.2.0",
+    "open": "0.0.5",
+    "phantomjs-prebuilt": "^2.1.7",
+    "requirejs": "^2.1.22"
   }
 }

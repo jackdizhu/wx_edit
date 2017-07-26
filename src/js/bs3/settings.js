@@ -17,17 +17,12 @@ define([
   'summernote/bs3/module/LinkDialog',
   'summernote/bs3/module/LinkPopover',
   'summernote/bs3/module/ImageDialog',
-  // 'summernote/bs3/module/ImagePopover',
-  '',
+  'summernote/bs3/module/ImagePopover',
   'summernote/bs3/module/TablePopover',
-  // 'summernote/bs3/module/VideoDialog',
-  '',
-  // 'summernote/bs3/module/HelpDialog',
-  '',
-  // 'summernote/bs3/module/AirPopover',
-  '',
-  // 'summernote/bs3/module/HintPopover'
-  ''
+  'summernote/bs3/module/VideoDialog',
+  'summernote/bs3/module/HelpDialog',
+  'summernote/bs3/module/AirPopover',
+  'summernote/bs3/module/HintPopover'
 ], function (
   ui, dom, lang,
   Editor, Clipboard, Dropzone, Codeview, Statusbar, Fullscreen, Handle, AutoLink, AutoSync, Placeholder,

@@ -18,7 +18,8 @@ module.exports = {
         publicPath: '../dist/',
         filename: 'js/[name].js',
         library: 'js/[name].js',
-        libraryTarget: 'umd',
+        // libraryTarget: 'umd',
+        libraryTarget: 'amd',
     },
     module: {
         rules: [

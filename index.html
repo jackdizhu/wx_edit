@@ -3,14 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-   <link rel="stylesheet" href="./dist/bootstrap-3.3.7/css/bootstrap.css" />
-   <link rel="stylesheet" href="./dist/summernote.css">
+  <script src="./dist/jquery-2.1.4/jquery.min.js"></script>
+   <link rel="stylesheet" href="./dist/bootstrap-3.3.7/css/bootstrap.min.css" />
+  <script src="./dist/bootstrap-3.3.7/js/bootstrap.min.js"></script>
    <title>summernote</title>
 </head>
 <body>
   <div class="container">
     <div class="summernote"><p>Hello World</p></div>
   </div>
-  <script data-main="src/js/app" data-editor-type="bs3" src="./dist/require.js"></script>
+  <!-- 调试 -->
+  <!-- <script data-main="src/js/app" data-editor-type="bs3" src="./dist/require.js"></script> -->
+
+   <!-- <link rel="stylesheet" href="./dist/summernote.css"> -->
+   <link rel="stylesheet" href="./dist/css/summernote.css">
+  <!-- <script src="./dist/summernote.js"></script> -->
+  <script src="./dist/js/summernote.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.summernote').summernote({
+        height: 300,
+        tabsize: 2
+      });
+    });
+  </script>
 </body>
 </html>
