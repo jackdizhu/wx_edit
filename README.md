@@ -23,12 +23,7 @@ https://jackdizhu.github.io/wx_edit/
     // removeFormatAll 修改清除样式方法
     src/js/base/module/Editor.js 修改
 
-    // gulp
-    npm run dev
-    npm run env
     // grunt
     npm run build
-    npm run min
-
 
 all 分支 原始版本
